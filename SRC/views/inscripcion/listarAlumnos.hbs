@@ -1,0 +1,64 @@
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<div class = "scroll"> 
+<div class="container p-4">
+    
+    <div class="row">
+        <h1 style="text-align:center;"> Alumnos Inscriptos</h1> 
+        <h1 style="text-align:center;"> {{#materias}} <th> {{nombreMateria}} </th> {{/materias}}  </h1> 
+                    {{#each horarios }}
+                         <h4 style="text-align: center; color:crimson" class="m-2">{{lunes}} {{horaInicioLunes}}  {{horaFinLunes}}</h4>
+                         <h4 style="text-align: center; color:crimson" class="m-2">{{martes}} {{horaInicioMartes}} {{horaFinMartes}}</h4>
+                         <h4 style="text-align: center; color:crimson" class="m-2">{{miercoles}} {{horaInicioMiercoles}}  {{horaFinMiercoles}}</h4>
+                         <h4 style="text-align: center; color:crimson" class="m-2">{{jueves}} {{horaInicioJueves}}  {{horaFinJueves}}</h4>
+                         <h4 style="text-align: center; color:crimson" class="m-2">{{viernes}} {{horaInicioViernes}}  {{horaFinViernes}}</h4>
+                    {{/each}}     
+                    
+                    <table id="testTable" name="table" style="width:100%">
+                       
+                        <tr>
+                            
+                            <th style="text-align: center; font-family: Verdana; background-color: grey; font-style: italic;">Usuario</th>
+                            <th style="text-align: center; font-family: Verdana; background-color: grey; font-style: italic;">Nombre</th>
+                            <th style="text-align: center; font-family: Verdana; background-color: grey; font-style: italic;">Apellido</th>
+                            <th style="text-align: center; font-family: Verdana; background-color: grey; font-style: italic;">Estado Alumno</th>
+                            <th style="text-align: center; font-family: Verdana; background-color: grey; font-style: italic;">Conflicto de Horarios</th>        
+                           
+                        </tr>
+                        
+                        {{#each alumitos}} 
+                        <tr>
+                            
+                        
+                            <th style="text-align: center;">{{usuario}}</th>
+                            <th style="text-align: center;">{{nombre}}</th>
+                            <th style="text-align: center;">{{apellido}} </th>    
+                            <th>
+                                <form action="/inscripcion/cambiarEstado/{{alumnos_id}}/{{materias_id}}" method="POST">
+                                <div style="text-align: center;" class="form-group">
+                                    {{valAlumno}} 
+                                    <button class="btn btn-success">Cambiar Estado</button>
+                                </div>
+                                </form>    
+                            </th>
+                            <th> <p>Lunes: {{conflictoLunes}} <br>
+                                    Martes: {{conflictoMartes}} <br>
+                                    Miercoles: {{conflictoMiercoles}} <br>
+                                    Jueves: {{conflictoJueves}} <br>
+                                    Viernes: {{conflictoViernes}} <br></p>   </th>   
+                        
+                        </tr>
+                        
+                        {{/each}}     
+                        </table>
+        
+       
+        
+    </div>
+    
+</div >
+
+</div>

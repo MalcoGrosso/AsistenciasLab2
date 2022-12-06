@@ -1,0 +1,35 @@
+<div class="container p-4">
+    <div  class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card ">
+                <div class="card-body">
+                        <h2 class="text-center">Crear Materia</h2>
+                    <form action="/materias/add" method="POST">
+                           
+                        <div class="form-group">
+                            <label>Profesor</label>
+                            <select name="profeCargo">
+                            
+                            {{#each profesores}} {{@rol}}:<option value={{idProfesores}}>{{nombre}} {{apellido}}</option>       {{/each}}
+                        </select>
+                            
+                        <div class="form-group">
+                            <br>
+                        </div>
+                         <div class="form-group">
+                             <input type="text" class="form-control" name="nombreMateria" placeholder="Nombre de la Materia" autofocus>
+                        </div>
+                       
+                        <div class="form-group">
+                            <br>
+                            <button class="btn btn-success w-100">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,142 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Asistencia de Clases Online</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      <ul class="navbar-nav ms-auto">
+       
+
+        {{#if (profesor user.rol) }}
+        <li class="nav-item">
+          <a style="color:crimson;" class="nav-link " href="/profile"> {{user.nombre}} {{user.apellido}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/materias">Mostrar Materias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/horarios/add">Agregar Horarios Materias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/horarios">Mostrar Horarios Materias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Cerrar Sesion</a>
+        </li>
+        
+        <li class="nav-item" id="hora">
+          <script>
+            function startTime() {
+              const today = new Date();
+              let h = today.getHours();
+              let m = today.getMinutes();
+              let s = today.getSeconds();
+              m = checkTime(m);
+              s = checkTime(s);
+              document.getElementById('hora').innerHTML =  h + ":" + m + ":" + s;
+              setTimeout(startTime, 1000);
+            }
+
+            function checkTime(i) {
+              if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+              return i;
+            }
+            
+          </script>
+        </li>
+        
+        
+
+        {{else if (alumno user.rol) }}
+        <li class="nav-item">
+          <a style="color: Blue;" class="nav-link" href="/profile"> {{user.nombre}} {{user.apellido}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/inscripcion">Mostrar inscripcion Materias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/asistencia">Mostrar asistencia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Cerrar Sesion</a>
+        </li>
+        
+        <li class="nav-item" id="hora">
+          <script>
+            function startTime() {
+              const today = new Date();
+              let h = today.getHours();
+              let m = today.getMinutes();
+              let s = today.getSeconds();
+              m = checkTime(m);
+              s = checkTime(s);
+              document.getElementById('hora').innerHTML =  h + ":" + m + ":" + s;
+              setTimeout(startTime, 1000);
+            }
+
+            function checkTime(i) {
+              if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+              return i;
+            }
+          </script>
+        </li>
+       
+
+        {{else if (coordinador user.rol) }}
+        <li class="nav-item">
+          <a style="color: Green;" class="nav-link" href="/profile"> {{user.nombre}} {{user.apellido}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/materias/add">Agregar Materias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/materias">Mostrar Materias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/asistencia/totales">Asistencia de la Carrera</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/CrearUsuario">Crear Usuario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Cerrar Sesion</a>
+        </li>
+        <li class="nav-item" id="hora">
+          <script>
+            function startTime() {
+              const today = new Date();
+              let h = today.getHours();
+              let m = today.getMinutes();
+              let s = today.getSeconds();
+              m = checkTime(m);
+              s = checkTime(s);
+              document.getElementById('hora').innerHTML =  h + ":" + m + ":" + s;
+              setTimeout(startTime, 1000);
+            }
+
+            function checkTime(i) {
+              if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+              return i;
+            }
+          </script>
+        </li>
+
+        {{else}}
+           <li class="nav-item">
+          <a class="nav-link" href="/Login">Loguearse</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/CrearUsuarioAlumno">Crear Usuario</a>
+        </li>
+        
+        {{/if}}
+
+      
+
+      </ul>
+    </div>
+  </div>
+</nav>

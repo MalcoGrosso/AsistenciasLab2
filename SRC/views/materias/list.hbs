@@ -1,0 +1,27 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each materias}}
+             <div class="col md-3">
+                 <div class="card text-center">
+                     <div class="card-body">
+                             <h3 class="card-title text-uppercase">
+                                 {{nombreMateria}}
+                             </h3>
+                         </a>
+                         
+                         <p class="m-2">Profesor <br> {{nombre}} {{apellido}}</p>
+                         
+                      
+                     </div>
+                 </div>
+             </div>
+        {{else}}  
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <P>No hay Materias Guardadas.</P>
+                    <a href="/materias/add"> crear nuevo Materia </a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

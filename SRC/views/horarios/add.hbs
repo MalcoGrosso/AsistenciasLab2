@@ -1,0 +1,141 @@
+<div class = "scroll">    
+    <div class="container p-4">
+        <div  class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="card ">
+                    <div class="card-body">
+                            <h2 class="text-center">Agregar Horarios</h2><br>
+                        <form action="/horarios/add" method="POST">
+                            
+                            <div class="form-group">
+                                <label>Materia</label>
+                                <select name="materiasID">
+                                {{#each materias}} <option value={{idMaterias}}>{{nombreMateria}}</option>{{/each}}
+                                </select>
+                                <br><br>
+                            </div>    
+                               <h2 style="color: rgb(237, 241, 2); text-align: center " > Dias de la Semana</h2>     
+                                
+                            <div style="text-align: center;" class="form-group">    
+                                <br>
+                                <label style="color: green; " ><input type="checkbox" id="cbLunes" name="lunes" value="Lunes"> Lunes</label><br>
+                                <div class="form-group">
+                                <br>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                Hora Inicio <input type="time" id="tiLunes" class="form-control" name="horaInicioLunes" min="9:00" max="20:00" disabled>
+                                <br>
+                            </div>
+                                <div class="form-group">
+                                Hora Fin <input type="time" id="tfLunes" class="form-control" name="horaFinLunes" min="10:00" max="22:00" disabled>
+                                <br>
+                                <label style="color: Red; " >  ---------------------------------------------------------------------------------- </label><br>
+                                </div>
+                            <div style="text-align: center;" class="form-group">
+                                <br>
+                                <label style="color: green; "><input type="checkbox" id="cbMartes" name="martes" value="Martes"> Martes</label><br>
+                                <div class="form-group">
+                                <br>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                Hora Inicio <input type="time" id="tiMartes" class="form-control" name="horaInicioMartes" min="9:00" max="20:00" disabled>
+                                <br>
+                            </div>
+                                <div class="form-group">
+                                Hora Fin <input type="time" id="tfMartes" class="form-control" name="horaFinMartes" min="10:00" max="22:00" disabled>
+                                <br>
+                                <label style="color: Red; " >  ---------------------------------------------------------------------------------- </label><br>
+                                </div>
+                            <div style="text-align: center;" class="form-group">
+                                <br>
+                                <label style="color: green; "><input type="checkbox" id="cbMiercoles" name="miercoles" value="Miercoles"> Miercoles</label><br>
+                                <div class="form-group">
+                                <br>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                Hora Inicio <input type="time" id="tiMiercoles" class="form-control" name="horaInicioMiercoles" min="9:00" max="20:00" disabled>
+                                <br>
+                            </div>
+                                <div class="form-group">
+                                Hora Fin <input type="time" id="tfMiercoles"  class="form-control" name="horaFinMiercoles" min="10:00" max="22:00" disabled>
+                                <br>
+                                <label style="color: Red; " >  ---------------------------------------------------------------------------------- </label><br>
+                                </div>
+                            <div style="text-align: center;" class="form-group">
+                                <br>
+                                <label style="color: green; "><input type="checkbox" id="cbJueves" name="jueves" value="Jueves"> Jueves</label><br>
+                                <div class="form-group">
+                                <br>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                Hora Inicio <input type="time" id="tiJueves" class="form-control" name="horaInicioJueves" min="9:00" max="20:00" disabled >
+                                <br>
+                            </div>
+                                <div class="form-group">
+                                Hora Fin <input type="time" id="tfjueves" class="form-control" name="horaFinJueves" min="10:00" max="22:00" disabled>
+                                <br>
+                                <label style="color: Red; " >  ---------------------------------------------------------------------------------- </label><br>
+                                </div>
+                            <div style="text-align: center;" class="form-group">
+                                <br>
+                                <label style="color: green; "><input type="checkbox" id="cbViernes" name="viernes" value="Viernes"> Viernes</label><br>
+                                <div class="form-group">
+                                <br>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                Hora Inicio <input type="time" id="tiViernes" class="form-control" name="horaInicioViernes" min="9:00" max="20:00" disabled>
+                                <br>
+                            </div>
+                                <div class="form-group">
+                                Hora Fin <input type="time" id="tfViernes" class="form-control" name="horaFinViernes" min="10:00" max="22:00" disabled>
+                                <br>
+                                </div>
+                            <div class="form-group">
+                                </div>
+
+                            <div class="form-group">
+                                <br>
+                                <input class="btn btn-success w-100" type="submit" value="Agregar Horario">
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+
+<script>
+
+    document.getElementById('cbLunes').onchange = function() {
+    document.getElementById('tiLunes').disabled = !this.checked;
+    document.getElementById('tfLunes').disabled = !this.checked;
+};
+
+    document.getElementById('cbMartes').onchange = function() {
+    document.getElementById('tiMartes').disabled = !this.checked;
+    document.getElementById('tfMartes').disabled = !this.checked;
+};    
+
+    document.getElementById('cbMiercoles').onchange = function() {
+    document.getElementById('tiMiercoles').disabled = !this.checked;
+    document.getElementById('tfMiercoles').disabled = !this.checked;
+};
+
+    document.getElementById('cbJueves').onchange = function() {
+    document.getElementById('tiJueves').disabled = !this.checked;
+    document.getElementById('tfJueves').disabled = !this.checked;
+};
+
+    document.getElementById('cbViernes').onchange = function() {
+    document.getElementById('tiViernes').disabled = !this.checked;
+    document.getElementById('tfViernes').disabled = !this.checked;
+};
+
+</script>
